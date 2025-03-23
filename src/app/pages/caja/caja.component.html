@@ -1,0 +1,663 @@
+<!-- Caja table -->
+<mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>CAJA</mat-card-title>
+  
+      <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource1" class="w-100">
+          <!-- Date Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Fecha y hora
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <!-- <img [src]="element.imagePath" alt="users" width="60" class="rounded" /> ACA IRÍA UNA IMAGEN PERO YA NO MÁS XD -->
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.date }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Shift Column -->
+          <ng-container matColumnDef="shift">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Turno
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.shift }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Opening Balance Column -->
+          <ng-container matColumnDef="opening_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Saldo inicial
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.openingBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Checker Column -->
+          <ng-container matColumnDef="checker">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Cajero
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.checker }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Income Column -->
+          <ng-container matColumnDef="income">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Ingresos
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.income }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Expenses Column -->
+          <ng-container matColumnDef="expenses">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Egresos
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.expenses }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Sales Column -->
+          <ng-container matColumnDef="sales">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Ventas
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.sales }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Services Column -->
+          <ng-container matColumnDef="services">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Servicios
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.services }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Current Balance Column -->
+          <ng-container matColumnDef="current_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Saldo actual
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.currentBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- State Column -->
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Estado
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.state }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsCaja"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsCaja"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+<!-- Servicio de corte table -->
+  <mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>Servicio de corte</mat-card-title>
+  
+      <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource1" class="w-100">
+          <!-- Cortes Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Número de corte
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <!-- <img [src]="element.imagePath" alt="users" width="60" class="rounded" /> ACA IRÍA UNA IMAGEN PERO YA NO MÁS XD -->
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.date }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Monto Column -->
+          <ng-container matColumnDef="shift">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Monto
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.shift }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Barbero Column -->
+          <ng-container matColumnDef="opening_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Barbero
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.openingBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Fecha y hora Column -->
+          <ng-container matColumnDef="checker">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Fecha y hora
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.checker }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Metodo de pago Column -->
+          <ng-container matColumnDef="income">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Método de pago
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.income }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>            
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsServicio"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsServicio"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <!-- Ventas table -->
+  <mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>Ventas</mat-card-title>
+  
+      <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource1" class="w-100">
+          <!-- Número de venta Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Número de venta
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <!-- <img [src]="element.imagePath" alt="users" width="60" class="rounded" /> ACA IRÍA UNA IMAGEN PERO YA NO MÁS XD -->
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.date }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Monto Column -->
+          <ng-container matColumnDef="shift">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Monto
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.shift }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Fecha y hora Column -->
+          <ng-container matColumnDef="opening_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Fecha y hora
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.openingBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Metodo de pago Column -->
+          <ng-container matColumnDef="checker">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Metodo de pago
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.checker }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsVentas"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsVentas"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Ingresos table -->
+  <mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>Ingresos</mat-card-title>
+  
+      <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource1" class="w-100">
+          <!-- Número de ingreso Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Número de ingreso
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <!-- <img [src]="element.imagePath" alt="users" width="60" class="rounded" /> ACA IRÍA UNA IMAGEN PERO YA NO MÁS XD -->
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.date }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Concepto Column -->
+          <ng-container matColumnDef="shift">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Concepto
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.shift }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Monto Column -->
+          <ng-container matColumnDef="opening_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Monto
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.openingBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Checker Column -->
+          <ng-container matColumnDef="checker">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Cajero
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.checker }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Income Column -->
+          <ng-container matColumnDef="income">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Ingresos
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.income }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Expenses Column -->
+          <ng-container matColumnDef="expenses">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Egresos
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.expenses }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Sales Column -->
+          <ng-container matColumnDef="sales">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Ventas
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.sales }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Services Column -->
+          <ng-container matColumnDef="services">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Servicios
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.services }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Current Balance Column -->
+          <ng-container matColumnDef="current_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Saldo actual
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.currentBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- State Column -->
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Estado
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.state }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+            
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsVentas"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsVentas"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Egresos table -->
+  <mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>Egresos</mat-card-title>
+  
+      <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource1" class="w-100">
+          <!-- Número de ingreso Column -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Número de Egreso
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <!-- <img [src]="element.imagePath" alt="users" width="60" class="rounded" /> ACA IRÍA UNA IMAGEN PERO YA NO MÁS XD -->
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.date }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Concepto Column -->
+          <ng-container matColumnDef="shift">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Concepto
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.shift }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Monto Column -->
+          <ng-container matColumnDef="opening_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Monto
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.openingBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Checker Column -->
+          <ng-container matColumnDef="checker">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Cajero
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.checker }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Income Column -->
+          <ng-container matColumnDef="income">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Ingresos
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.income }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Expenses Column -->
+          <ng-container matColumnDef="expenses">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Egresos
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.expenses }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Sales Column -->
+          <ng-container matColumnDef="sales">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Ventas
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.sales }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Services Column -->
+          <ng-container matColumnDef="services">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Servicios
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.services }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Current Balance Column -->
+          <ng-container matColumnDef="current_balance">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Saldo actual
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.currentBalance }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- State Column -->
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 f-s-14 p-l-0">
+              Estado
+            </th>
+            <td mat-cell *matCellDef="let element" class="p-l-0">
+              <div class="d-flex align-items-center">
+                <div class="m-l-16">
+                  <h6 class="f-s-14 f-w-600">
+                    {{ element.state }}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+            
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsVentas"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsVentas"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
