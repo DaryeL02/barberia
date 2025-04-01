@@ -1,5 +1,5 @@
 html {
-  --mat-sys-surface-container: #fff;
+  --mat-sys-surface-container: #141a21;
   --mat-sys-error-fixed-dim: rgba(247, 68, 86, 0.15);
   --mat-select-container-elevation-shadow: var(--mat-sys-level3);
   --mdc-list-list-item-label-text-tracking: 0;
@@ -10,4 +10,7 @@ html {
   --mat-switch-with-icon-handle-size: 21px;
   --mat-badge-text-color: white;
   --mat-switch-selected-with-icon-handle-horizontal-margin: 0 26px;
+  --mat-menu-item-label-text-color: light-dark(#e3e2e6,#1a1b1f);
+  --mat-menu-item-icon-color: light-dark(#ffffff, #283041);
+  --mdc-list-list-item-hover-label-text-color: #e3e2e6;
 }
