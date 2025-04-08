@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { FullComponent } from './layouts/full/full.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { AuthLoginGuard } from './core/guards/auth-login.guard';
 
 export const routes: Routes = [
   {
@@ -16,19 +18,20 @@ export const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./pages/pages.routes').then((m) => m.PagesRoutes),
+        canLoad: [AuthGuard],
       },
-      {
-        path: 'ui-components',
-        loadChildren: () =>
-          import('./pages/ui-components/ui-components.routes').then(
-            (m) => m.UiComponentsRoutes
-          ),
-      },
-      {
-        path: 'extra',
-        loadChildren: () =>
-          import('./pages/extra/extra.routes').then((m) => m.ExtraRoutes),
-      },
+      // {
+      //   path: 'ui-components',
+      //   loadChildren: () =>
+      //     import('./pages/ui-components/ui-components.routes').then(
+      //       (m) => m.UiComponentsRoutes
+      //     ),
+      // },
+      // {
+      //   path: 'extra',
+      //   loadChildren: () =>
+      //     import('./pages/extra/extra.routes').then((m) => m.ExtraRoutes),
+      // },
     ],
   },
   {
@@ -41,9 +44,11 @@ export const routes: Routes = [
           import('./pages/authentication/authentication.routes').then(
             (m) => m.AuthenticationRoutes
           ),
+        canLoad: [AuthLoginGuard],
       },
     ],
   },
+  //En caso de no encontrar la url pasa por aqui
   {
     path: '**',
     redirectTo: 'authentication/error',
